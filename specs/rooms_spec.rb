@@ -12,7 +12,7 @@ class RoomTest < MiniTest::Test
     @song2 = Song.new("Sunny Afternoon", "The Kinks")
     @song3 = Song.new("Somebody to Love", "Queen")
     @songs = [@song1, @song2, @song3]
-    @guest1 = Guest.new("James Dean")
+    @guest = Guest.new("James Dean")
   end
 
   def test_room_name
@@ -24,6 +24,9 @@ class RoomTest < MiniTest::Test
   end
 
   def test_song_plays
-    @room.play_song()
-    assert_equal("Playing 'Somebody to Love' by 'Queen', for James Dean", 
+    assert_equal("Playing Somebody to Love", @room.play_song(@song3))
+  end
+
+  # def test_song_list_displays
+    # assert_equal("Here is the song list")
 end

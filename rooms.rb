@@ -1,12 +1,13 @@
 class Room
 
-attr_reader :number, :songs
-
-  def initialize(input_number, input_songs)
+  attr_reader :number, :song
+  def initialize(input_number, input_song)
     @number = input_number
-    @songs = input_songs
+    @song = input_song
   end
 
-
+  def play_song(song)
+    return "Playing #{song}"
+  end
 
 end
